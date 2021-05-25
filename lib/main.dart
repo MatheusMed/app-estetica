@@ -1,5 +1,9 @@
+import 'package:estetica_app/compartilhado/themes/app_themes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+
+import 'compartilhado/pages/decisao/decisao_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,11 +12,10 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Estética App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: appThemeData,
+      defaultTransition: Transition.cupertino,
       builder: (context, widget) => ResponsiveWrapper.builder(
         BouncingScrollWrapper.builder(
           context,
@@ -28,7 +31,7 @@ class MyApp extends StatelessWidget {
           ResponsiveBreakpoint.autoScale(2460, name: "4K"),
         ],
       ),
-      home: Container(),
+      home: DescisaoPage(),
     );
   }
 }
