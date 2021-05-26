@@ -7,7 +7,14 @@ class DescisaoPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Image.asset('assets/images/barbeando.jpg'),
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: new AssetImage("assets/images/barbeando.jpg"),
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
