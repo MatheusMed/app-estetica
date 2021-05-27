@@ -1,7 +1,8 @@
 import 'package:estetica_app/compartilhado/routes/app_pages.dart';
-import 'package:estetica_app/compartilhado/routes/app_routes.dart';
+
 import 'package:estetica_app/compartilhado/themes/app_themes.dart';
 import 'package:estetica_app/usuario/bindings/usuario_binding.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: appThemeData,
       initialBinding: UsuarioBinding(),
       getPages: AppPages.pages,
-      defaultTransition: Transition.cupertino,
+      defaultTransition: Transition.fadeIn,
       builder: (context, widget) => ResponsiveWrapper.builder(
         BouncingScrollWrapper.builder(
           context,
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
           ResponsiveBreakpoint.autoScale(2460, name: "4K"),
         ],
       ),
-      home: DescisaoPage(),
+      home: DecisaoPage(),
     );
   }
 }
